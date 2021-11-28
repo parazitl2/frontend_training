@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 // import appReducer from '../ducks/app/appSlice';
 import createSagaMiddleware from '@redux-saga/core';
 import rootReducer from './rootReducer';
+import rootSaga from './rootSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -15,4 +16,4 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware)
 });
 
-sagaMiddleware.run();
+sagaMiddleware.run(rootSaga);
