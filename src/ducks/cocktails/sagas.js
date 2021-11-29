@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects'
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { getCocktailsByFirstLetter } from '../../services/cocktails';
 import { 
    cocktailsByLetterFailed,
@@ -13,8 +13,6 @@ function* sagaGetCocktailsByFirstLetter({ payload = 'a' }) {
       yield put(cocktailsByLetterLoading());
 
       const { data } = yield call(getCocktailsByFirstLetter, payload);
-
-      console.log(data.drinks);
 
       yield put(cocktailsByLetterReceived(data.drinks));
    } catch (e) {
