@@ -30,7 +30,6 @@ const userSlice = createSlice({
       };
     },
     currentUserReceived(state, action) {
-      debugger;
       return {
         ...state,
         isAuth: true,

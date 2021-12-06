@@ -15,9 +15,7 @@ import {
 
 function* userLoginWorker({ payload }) {
   try {
-    debugger;
     const response = yield call(loginRequest, { ...payload });
-    debugger;
 
     if(response.data.token) {
       localStorage.setItem(LS_AUTH_TOKEN_KEY, response.data.token);
