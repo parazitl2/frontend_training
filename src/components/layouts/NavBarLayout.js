@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Outlet } from 'react-router';
 
-import NavBar from '../NavBar';
+import NavBar from '../NavBar/index';
 
 const NavBarLayout = ({ isAuth, currentUser }) => {
   return (
@@ -14,7 +14,7 @@ const NavBarLayout = ({ isAuth, currentUser }) => {
 };
 
 NavBarLayout.propTypes = {
-  isAuth: PropTypes.bool.required,
+  isAuth: PropTypes.bool,
   currentUser: PropTypes.object,
 };
 

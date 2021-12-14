@@ -28,8 +28,8 @@ CatOverview.defaultProps = {
 };
 
 CatOverview.propTypes = {
-  id: PropTypes.string.required,
-  url: PropTypes.string.required,
+  id: PropTypes.string,
+  url: PropTypes.string,
 };
 
 export default React.memo(CatOverview);

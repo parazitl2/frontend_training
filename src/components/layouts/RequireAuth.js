@@ -21,7 +21,7 @@ const RequireAuth = ({ children }) => {
 };
 
 RequireAuth.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.elementType)
+  children: PropTypes.object
 };
 
 export default RequireAuth;

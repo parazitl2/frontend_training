@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import CocktailsList from '../../components/CocktailsList';
+import CocktailsList from '../../components/CocktailsList/index.js';
 import { cocktailsActions, cocktailsSelectors } from '../../ducks/cocktails';
 
 const CocktailsListContainer = () => {

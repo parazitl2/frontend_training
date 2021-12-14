@@ -22,6 +22,7 @@
     "rules": {
         "semi": [2, "always"],
         "comma-dangle": "off",
+        "import/no-unresolved": 0,
         "import/export": 2,
         "import/order": [2, {
             "alphabetize": {

@@ -21,7 +21,7 @@ CatsList.defaultProps = {
 };
 
 CatsList.propTypes = {
-  cats: PropTypes.arrayOf(PropTypes.shapeOf({
+  cats: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.required,
     url: PropTypes.string.required,
   }))
