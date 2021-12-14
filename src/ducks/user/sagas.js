@@ -1,9 +1,9 @@
-import { put, takeLatest, call } from 'redux-saga/effects'
-import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi'
+import { put, takeLatest, call } from 'redux-saga/effects';
+import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi';
 import {
   loginRequest,
   fetchCurrentUserRequest
-} from '../../services/noveo'
+} from '../../services/noveo';
 import {
   currentUserError,
   currentUserReceived,
@@ -11,7 +11,7 @@ import {
   userLoginError,
   userLoginRequest,
   userLoginSuccess
-} from './slice'
+} from './slice';
 
 function * userLoginWorker ({ payload }) {
   try {

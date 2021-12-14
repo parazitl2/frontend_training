@@ -24,6 +24,6 @@ CatsList.propTypes = {
     id: PropTypes.string.required,
     url: PropTypes.string.required,
   }))
-}
+};
 
 export default CatsList;

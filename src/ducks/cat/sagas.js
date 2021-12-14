@@ -14,7 +14,7 @@ function * fetchCatsWorker ({ payload }) {
         cats: response.data
       }));
     } else {
-      yield put(fetchCatsError(response))
+      yield put(fetchCatsError(response));
     }
   } catch (e) {
     yield put(fetchCatsError(e));

@@ -16,7 +16,7 @@ const catSlice = createSlice({
         ...store,
         fetching: true,
         error: null
-      }
+      };
     },
     fetchCatsSuccess: (store, { payload }) => {
       return {
@@ -27,7 +27,7 @@ const catSlice = createSlice({
         currentPage: Number(payload.currentPage),
         perPage: Number(payload.perPage),
         totalCats: Number(payload.totalCats)
-      }
+      };
     },
     fetchCatsError: (store, { payload }) => {
       return {
@@ -35,7 +35,7 @@ const catSlice = createSlice({
         fetching: false,
         error: payload.error,
         cats: []
-      }
+      };
     }
   }
 });
