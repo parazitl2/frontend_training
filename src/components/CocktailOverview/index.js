@@ -1,5 +1,3 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import {
   Button,
   Card,
@@ -8,6 +6,8 @@ import {
   CardMedia,
   Typography,
 } from '@mui/material';
+import PropTypes from 'prop-types';
+import React from 'react';
 
 /*
   Card to show exact coctail

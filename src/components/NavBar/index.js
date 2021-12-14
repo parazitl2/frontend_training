@@ -1,4 +1,3 @@
-import React, { useCallback } from 'react';
 import {
   AppBar,
   // IconButton,
@@ -9,7 +8,9 @@ import {
 } from '@mui/material';
 // import MenuIcon from '@mui/icons-material/Menu';
 import PropTypes from 'prop-types';
+import React, { useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 import { CATS_ROUTE, COCKTAILS_ROUTE } from '../../constants/common';
 
 function NavBar ({ isAuth, currentUser }) {

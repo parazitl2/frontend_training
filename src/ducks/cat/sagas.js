@@ -1,5 +1,7 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { fetchCats } from '../../services/thecat';
+
 import { fetchCatsSuccess, fetchCatsError, fetchCatsRequest } from './slice';
 
 function * fetchCatsWorker ({ payload }) {

@@ -1,17 +1,18 @@
 import React from 'react';
 // import { Counter } from './features/counter/Counter';
 import './App.css';
-import { Navigate, Route, Routes } from 'react-router';
-import CocktailsListContainer from '../../containers/CocktailsList';
-import NavBarLayout from '../layouts/NavBarLayout';
-import WelcomeScreenContainer from '../../containers/WelcomeScreenContainer';
-import Login from '../Login/index.jsx';
-import { useSelector } from 'react-redux';
-import { selectIsInitialized } from '../../ducks/app/selectors';
 import Loader from 'react-loader-spinner';
-import RequireAuth from '../layouts/RequireAuth';
-import { selectCurrentUser, selectIsAuth } from '../../ducks/user/selectors';
+import { useSelector } from 'react-redux';
+import { Navigate, Route, Routes } from 'react-router';
+
 import CatsPageContainer from '../../containers/CatsPage';
+import CocktailsListContainer from '../../containers/CocktailsList';
+import WelcomeScreenContainer from '../../containers/WelcomeScreenContainer';
+import { selectIsInitialized } from '../../ducks/app/selectors';
+import { selectCurrentUser, selectIsAuth } from '../../ducks/user/selectors';
+import NavBarLayout from '../layouts/NavBarLayout';
+import RequireAuth from '../layouts/RequireAuth';
+import Login from '../Login';
 
 function App () {
   const isInitialized = useSelector(selectIsInitialized);

@@ -1,7 +1,8 @@
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import React from 'react';
-import { NOT_FOUND_IMAGE_CDN } from '../../constants/thecatApi';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import { NOT_FOUND_IMAGE_CDN } from '../../constants/thecatApi';
 
 const CatOverview = ({ url, id }) => {
   return (

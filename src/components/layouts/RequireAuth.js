@@ -1,8 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
+
 import { selectIsAuth } from '../../ducks/user/selectors';
-import PropTypes from 'prop-types';
 
 const RequireAuth = ({ children }) => {
   const isAuth = useSelector(selectIsAuth);

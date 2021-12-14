@@ -16,26 +16,21 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "import"
     ],
     "rules": {
         "semi": [2, "always"],
-        "comma-dangle": "off"
-    },
-    "settings": {
-        // "import/resolver": {
-        //     "extensions": [
-        //         ".js", 
-        //         ".jsx"
-        //     ],
-        //     "paths": [
-        //         "./src"
-        //     ]
-        // },
+        "comma-dangle": "off",
+        "import/export": 2,
         "import/order": [2, {
             "alphabetize": {
-                "order": "asc"
-            }
-        }]
-    }
+                "order": "asc",
+                "caseInsensitive": true
+            },
+            "newlines-between": "always"
+        }],
+        "import/newline-after-import": 2
+    },
+    "settings": {}
 }

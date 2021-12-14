@@ -1,9 +1,11 @@
 import { put, takeLatest, call } from 'redux-saga/effects';
+
 import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi';
 import {
   loginRequest,
   fetchCurrentUserRequest
 } from '../../services/noveo';
+
 import {
   currentUserError,
   currentUserReceived,

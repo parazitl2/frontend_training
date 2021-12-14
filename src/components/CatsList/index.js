@@ -1,7 +1,8 @@
 import { Grid } from '@mui/material';
-import React from 'react';
-import CatOverview from '../CatOverview';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import CatOverview from '../CatOverview';
 
 const CatsList = ({ cats }) => {
   return (
