@@ -1,19 +1,14 @@
-import { createTheme, ThemeProvider } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
 import { HistoryRouter as Router } from 'redux-first-history/rr6';
 
+import { theme } from './common/theme';
 import App from './components/App/App.jsx';
 import * as serviceWorker from './serviceWorker';
 import { store, history } from './store';
-
-const theme = createTheme({
-  typography: {
-    fontFamily: 'Montserrat, Roboto, Arial, sans-serif'
-  }
-});
 
 ReactDOM.render(
   <React.StrictMode>
