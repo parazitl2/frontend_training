@@ -1,23 +1,23 @@
-import { put, takeLatest, call } from 'redux-saga/effects';
-import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi';
+import { put, takeLatest, call } from 'redux-saga/effects'
+import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi'
 import {
   loginRequest,
   fetchCurrentUserRequest
-} from '../../services/noveo';
-import { 
+} from '../../services/noveo'
+import {
   currentUserError,
   currentUserReceived,
   currentUserRequest,
   userLoginError,
   userLoginRequest,
   userLoginSuccess
-} from './slice';
+} from './slice'
 
-function* userLoginWorker({ payload }) {
+function * userLoginWorker ({ payload }) {
   try {
     const response = yield call(loginRequest, { ...payload });
 
-    if(response.data.token) {
+    if (response.data.token) {
       localStorage.setItem(LS_AUTH_TOKEN_KEY, response.data.token);
       yield put(userLoginSuccess());
     } else {
@@ -28,7 +28,7 @@ function* userLoginWorker({ payload }) {
   }
 };
 
-function* getCurrentUserWorker() {
+function * getCurrentUserWorker () {
   try {
     const response = yield call(fetchCurrentUserRequest);
     yield put(currentUserReceived(response.data.user));
@@ -37,7 +37,7 @@ function* getCurrentUserWorker() {
   }
 };
 
-export default function* userSagas() {
+export default function * userSagas () {
   yield takeLatest(userLoginRequest, userLoginWorker);
   yield takeLatest(userLoginSuccess, getCurrentUserWorker);
   yield takeLatest(currentUserRequest, getCurrentUserWorker);

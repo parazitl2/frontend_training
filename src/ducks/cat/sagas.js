@@ -1,8 +1,8 @@
-import { call, put, takeLatest } from "redux-saga/effects";
-import { fetchCats } from "../../services/thecat";
-import { fetchCatsSuccess, fetchCatsError, fetchCatsRequest } from "./slice";
+import { call, put, takeLatest } from 'redux-saga/effects';
+import { fetchCats } from '../../services/thecat';
+import { fetchCatsSuccess, fetchCatsError, fetchCatsRequest } from './slice';
 
-function* fetchCatsWorker({ payload }) {
+function * fetchCatsWorker ({ payload }) {
   try {
     const response = yield call(fetchCats, { ...payload });
 
@@ -21,6 +21,6 @@ function* fetchCatsWorker({ payload }) {
   }
 };
 
-export default function* CatSagasWatcher() {
+export default function * CatSagasWatcher () {
   yield takeLatest(fetchCatsRequest, fetchCatsWorker);
-}; 
+};

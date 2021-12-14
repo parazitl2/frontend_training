@@ -1,11 +1,12 @@
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 import React from 'react';
 import { NOT_FOUND_IMAGE_CDN } from '../../constants/thecatApi';
+import PropTypes from 'prop-types';
 
 const CatOverview = ({ url, id }) => {
   return (
     <Card sx={{ maxWidth: 400 }}>
-      <CardMedia 
+      <CardMedia
         component='img'
         height='300'
         image={ url || NOT_FOUND_IMAGE_CDN }
@@ -20,4 +21,14 @@ const CatOverview = ({ url, id }) => {
   );
 };
 
-export default CatOverview;
+CatOverview.defaultProps = {
+  id: '1',
+  url: NOT_FOUND_IMAGE_CDN,
+};
+
+CatOverview.propTypes = {
+  id: PropTypes.string.required,
+  url: PropTypes.string.required,
+};
+
+export default React.memo(CatOverview);

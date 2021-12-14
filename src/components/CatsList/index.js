@@ -1,9 +1,9 @@
 import { Grid } from '@mui/material';
 import React from 'react';
 import CatOverview from '../CatOverview';
+import PropTypes from 'prop-types';
 
 const CatsList = ({ cats }) => {
-
   return (
   <>
   { cats
@@ -14,5 +14,16 @@ const CatsList = ({ cats }) => {
   }
   </>);
 };
+
+CatsList.defaultProps = {
+  cats: []
+};
+
+CatsList.propTypes = {
+  cats: PropTypes.arrayOf(PropTypes.shapeOf({
+    id: PropTypes.string.required,
+    url: PropTypes.string.required,
+  }))
+}
 
 export default CatsList;

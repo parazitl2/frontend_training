@@ -6,13 +6,13 @@ import {
   Button,
   Typography,
   Box
-} from "@mui/material";
+} from '@mui/material';
 // import MenuIcon from '@mui/icons-material/Menu';
 import PropTypes from 'prop-types';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { CATS_ROUTE, COCKTAILS_ROUTE } from '../constants/common';
 
-function NavBar({ isAuth, currentUser }) {
+function NavBar ({ isAuth, currentUser }) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -36,21 +36,21 @@ function NavBar({ isAuth, currentUser }) {
         >
           <MenuIcon />
         </IconButton> */}
-        <Typography 
+        <Typography
           edge='start'
-          variant="h6" 
-          component="div" 
+          variant="h6"
+          component="div"
           // sx={{ flexGrow: 1 }}
           >
           Buharest
         </Typography>
-        <Typography 
-          component="div" 
+        <Typography
+          component="div"
           sx={{ flexGrow: 1 }}
           >
         </Typography>
-        { isAuth
-          && <Box>
+        { isAuth &&
+          <Box>
             <Button disabled={location.pathname === COCKTAILS_ROUTE} color="inherit" onClick={handleCocktails}>
               Cocktails
             </Button>
@@ -59,8 +59,8 @@ function NavBar({ isAuth, currentUser }) {
             </Button>
           </Box>
         }
-        { currentUser 
-          && <Typography>{currentUser.name}</Typography>
+        { currentUser &&
+          <Typography>{currentUser.name}</Typography>
         }
         <Button color="inherit" href="#" variant="outlined" sx={{ my: 1, mx: 1.5 }}>
           {isAuth ? 'Logout' : 'Login'}
@@ -71,10 +71,12 @@ function NavBar({ isAuth, currentUser }) {
 };
 
 NavBar.defaultProps = {
-  currentUser: { name: "Stranger" },
+  isAuth: false,
+  currentUser: { name: 'Stranger' },
 };
 
 NavBar.propTypes = {
+  isAuth: PropTypes.bool,
   currentUser: PropTypes.object,
 };
 

@@ -1,4 +1,3 @@
-
 import axios from 'axios';
 import {
   API_HEADER_KEY_NAME,
@@ -15,7 +14,7 @@ const request = axios.create({
   },
 });
 
-function authInterceptor(config) {
+function authInterceptor (config) {
   if (!config.withoutAuthorization) {
     config.headers[API_HEADER_KEY_NAME] = API_KEY_VALUE;
   }
@@ -24,10 +23,9 @@ function authInterceptor(config) {
 
 request.interceptors.request.use(authInterceptor);
 
-
 export const fetchCats = ({
   limit = DEFAULT_PER_PAGE,
   page = DEFAULT_START_PAGE,
   order = CATS_SORT_DESC
-}) => 
-  request.get(SEARCH_CATS_URL, { params: { limit, page, order }});
+}) =>
+  request.get(SEARCH_CATS_URL, { params: { limit, page, order } });

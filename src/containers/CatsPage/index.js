@@ -25,8 +25,8 @@ const CatsPageContainer = () => {
 
   return (<>
     <Stack spacing={2}>
-      <Pagination 
-        count={parseInt(totalCats/perPage)}
+      <Pagination
+        count={parseInt(totalCats / perPage)}
         page={currentPage}
         size='large'
         onChange={handlePagination()}
