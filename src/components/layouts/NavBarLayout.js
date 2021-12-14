@@ -2,10 +2,10 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import NavBar from '../NavBar';
 
-const NavBarLayout = () => {
+const NavBarLayout = ({ isAuth, currentUser }) => {
   return (
     <>
-      <NavBar username="Vaso"/>
+      <NavBar isAuth={isAuth} currentUser={currentUser} />
       <Outlet />
     </>
   );

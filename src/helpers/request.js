@@ -3,7 +3,8 @@ import axios from 'axios';
 
 const request = axios.create({
   headers: {
-    'Content-Type': 'application/json',
+    // 'Content-Type': 'application/json',
+    'Content-Type': 'text/plain',
   },
 });
 

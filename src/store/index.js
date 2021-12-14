@@ -9,6 +9,7 @@ import { createReduxHistoryContext } from "redux-first-history";
 import { createBrowserHistory } from 'history';
 import { appReducer } from '../ducks/app';
 import { userReducer } from '../ducks/user';
+import { catReducer } from '../ducks/cat';
 
 const {
   createReduxHistory,
@@ -25,6 +26,7 @@ export const store = configureStore({
     router: routerReducer,
     cocktails: cocktailsReducer,
     user: userReducer,
+    cat: catReducer,
   },
   // reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware()

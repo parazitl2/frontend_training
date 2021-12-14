@@ -1,4 +1,4 @@
-import request from '../helpers/request';
+import axios from 'axios';
 import {
   API_HEADER_KEY_NAME,
   API_HEADER_KEY_VALUE,
@@ -6,6 +6,12 @@ import {
   LS_AUTH_TOKEN_KEY,
 } from '../constants/noveoApi';
 import { FETCH_CURRENT_USER_URL } from '../constants/noveoApi';
+
+const request = axios.create({
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
 
 function apiKeyInterceptor(config) {
   config.headers[API_HEADER_KEY_NAME] = API_HEADER_KEY_VALUE;
