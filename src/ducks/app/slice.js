@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const appSlice = createSlice({
   name: '@@app',
@@ -6,7 +6,7 @@ const appSlice = createSlice({
     isInitialized: false,
   },
   reducers: {
-    initApp(state) {
+    initApp (state) {
       return {
         ...state,
         isInitialized: true

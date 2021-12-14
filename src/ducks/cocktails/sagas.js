@@ -1,23 +1,25 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
+
 import { getCocktailsByFirstLetter } from '../../services/cocktails';
-import { 
-   cocktailsByLetterFailed,
-   cocktailsByLetterLoading,
-   cocktailsByLetterReceived,
-   cocktailsByLetterRequested,
+
+import {
+  cocktailsByLetterFailed,
+  cocktailsByLetterLoading,
+  cocktailsByLetterReceived,
+  cocktailsByLetterRequested,
 } from './slice';
 
 // worker Saga: will be fired on cocktailsByLetterRequested actions
-function* sagaGetCocktailsByFirstLetter({ payload = 'a' }) {
-   try {
-      yield put(cocktailsByLetterLoading());
+function * sagaGetCocktailsByFirstLetter ({ payload = 'a' }) {
+  try {
+    yield put(cocktailsByLetterLoading());
 
-      const { data } = yield call(getCocktailsByFirstLetter, payload);
+    const { data } = yield call(getCocktailsByFirstLetter, payload);
 
-      yield put(cocktailsByLetterReceived(data.drinks));
-   } catch (e) {
-      yield put(cocktailsByLetterFailed(e));
-   }
+    yield put(cocktailsByLetterReceived(data.drinks));
+  } catch (e) {
+    yield put(cocktailsByLetterFailed(e));
+  }
 }
 
 /*
@@ -27,6 +29,6 @@ function* sagaGetCocktailsByFirstLetter({ payload = 'a' }) {
   dispatched while a fetch is already pending, that pending fetch is cancelled
   and only the latest one will be run.
 */
-export default function* cocktailsSagaWatcher() {
-   yield takeLatest(cocktailsByLetterRequested, sagaGetCocktailsByFirstLetter);
+export default function * cocktailsSagaWatcher () {
+  yield takeLatest(cocktailsByLetterRequested, sagaGetCocktailsByFirstLetter);
 };

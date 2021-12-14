@@ -1,10 +1,12 @@
-import { fork, put, race, take } from "@redux-saga/core/effects";
-import { currentUserRequest, currentUserReceived, currentUserError } from "../user/slice";
-import { initApp } from "./slice";
-import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi';
+import { fork, put, race, take } from '@redux-saga/core/effects';
 
-export function* initAppWorker() {
-  if (!!localStorage.getItem(LS_AUTH_TOKEN_KEY)) {
+import { LS_AUTH_TOKEN_KEY } from '../../constants/noveoApi';
+import { currentUserRequest, currentUserReceived, currentUserError } from '../user/slice';
+
+import { initApp } from './slice';
+
+export function * initAppWorker () {
+  if (localStorage.getItem(LS_AUTH_TOKEN_KEY)) {
     yield put(currentUserRequest());
     yield race([
       take(currentUserReceived),
@@ -14,7 +16,6 @@ export function* initAppWorker() {
   yield put(initApp());
 }
 
-
-export default function* initAppSagaWatcher() {
+export default function * initAppSagaWatcher () {
   yield fork(initAppWorker);
 };

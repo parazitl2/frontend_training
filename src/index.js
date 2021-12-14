@@ -1,12 +1,13 @@
+import { createTheme, ThemeProvider } from '@mui/material';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App.jsx';
-import { store, history } from './store';
 import { Provider } from 'react-redux';
-import * as serviceWorker from './serviceWorker';
 import { HistoryRouter as Router } from 'redux-first-history/rr6';
-import { createTheme, ThemeProvider } from '@mui/material';
+
+import App from './components/App/App.jsx';
+import * as serviceWorker from './serviceWorker';
+import { store, history } from './store';
 
 const theme = createTheme({
   typography: {

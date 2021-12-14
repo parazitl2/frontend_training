@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const cocktailSlice = createSlice({
   name: '@@cocktails',
@@ -18,7 +18,7 @@ const cocktailSlice = createSlice({
       isLoading: false,
       cocktails: action.payload
     }),
-    cocktailsByLetterFailed(state, action) {
+    cocktailsByLetterFailed (state, action) {
       state.push({
         isLoading: false,
         error: action.payload

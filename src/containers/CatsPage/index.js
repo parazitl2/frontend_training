@@ -1,6 +1,7 @@
 import { Pagination, Paper, Stack } from '@mui/material';
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import CatsList from '../../components/CatsList';
 import { selectCats, selectCurrentPage, selectPerPage, selectTotalCats } from '../../ducks/cat/selectors';
 import { fetchCatsRequest } from '../../ducks/cat/slice';

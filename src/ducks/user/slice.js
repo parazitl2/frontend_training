@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const userSlice = createSlice({
   name: '@@user',
@@ -8,40 +8,40 @@ const userSlice = createSlice({
     error: null,
   },
   reducers: {
-    userLoginRequest(state) {
+    userLoginRequest (state) {
       return {
         ...state,
         error: null
       };
     },
-    userLoginSuccess(state) {
+    userLoginSuccess (state) {
       return state;
     },
-    userLoginError(state) {
+    userLoginError (state) {
       return {
         ...state,
         error: null
       };
     },
-    currentUserRequest(state) {
+    currentUserRequest (state) {
       return {
         ...state,
         error: null
       };
     },
-    currentUserReceived(state, action) {
+    currentUserReceived (state, action) {
       return {
         ...state,
         isAuth: true,
         currentUser: action.payload,
       };
     },
-    currentUserError(state, action) {
+    currentUserError (state, action) {
       return {
         ...state,
         isAuth: false,
         error: action.payload,
-      }
+      };
     }
   }
 });

@@ -15,7 +15,7 @@ const request = axios.create({
 //   }
 //   return config;
 // }
-// 
+//
 // request.interceptors.request.use(authInterceptor);
 
 export default request;

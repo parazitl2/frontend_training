@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { useNavigate } from 'react-router';
+
 import WelcomeScreen from '../../components/WelcomeScreen';
 
 const WelcomeScreenContainer = () => {
