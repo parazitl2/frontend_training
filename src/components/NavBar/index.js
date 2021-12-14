@@ -10,7 +10,7 @@ import {
 // import MenuIcon from '@mui/icons-material/Menu';
 import PropTypes from 'prop-types';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { CATS_ROUTE, COCKTAILS_ROUTE } from '../constants/common';
+import { CATS_ROUTE, COCKTAILS_ROUTE } from '../../constants/common';
 
 function NavBar ({ isAuth, currentUser }) {
   const navigate = useNavigate();

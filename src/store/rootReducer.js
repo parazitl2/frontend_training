@@ -1,7 +1,7 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import { appReducer } from "../ducks/app";
-import { cocktailsReducer } from "../ducks/cocktails";
-import { userReducer } from "../ducks/user";
+import { combineReducers } from '@reduxjs/toolkit';
+import { appReducer } from '../ducks/app';
+import { cocktailsReducer } from '../ducks/cocktails';
+import { userReducer } from '../ducks/user';
 import counterReducer from '../features/counter/counterSlice';
 
 const rootReducer = combineReducers({

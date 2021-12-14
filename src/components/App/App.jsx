@@ -5,7 +5,7 @@ import { Navigate, Route, Routes } from 'react-router';
 import CocktailsListContainer from '../../containers/CocktailsList';
 import NavBarLayout from '../layouts/NavBarLayout';
 import WelcomeScreenContainer from '../../containers/WelcomeScreenContainer';
-import Login from '../Login/Login';
+import Login from '../Login/index.jsx';
 import { useSelector } from 'react-redux';
 import { selectIsInitialized } from '../../ducks/app/selectors';
 import Loader from 'react-loader-spinner';

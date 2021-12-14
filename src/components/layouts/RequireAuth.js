@@ -2,10 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
 import { selectIsAuth } from '../../ducks/user/selectors';
+import PropTypes from 'prop-types';
 
 const RequireAuth = ({ children }) => {
-  let isAuth = useSelector(selectIsAuth);
-  let location = useLocation();
+  const isAuth = useSelector(selectIsAuth);
+  const location = useLocation();
 
   if (!isAuth) {
     // Redirect them to the /login page, but save the current location they were
@@ -16,6 +17,10 @@ const RequireAuth = ({ children }) => {
   }
 
   return children;
+};
+
+RequireAuth.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.elementType)
 };
 
 export default RequireAuth;

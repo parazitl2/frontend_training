@@ -13,14 +13,14 @@ const request = axios.create({
   },
 });
 
-export const getCocktailsByFirstLetter = (letter = 'a') => 
+export const getCocktailsByFirstLetter = (letter = 'a') =>
   request.get(`${LIST_BY_FIRST_LETTER_URL}${letter}`);
 
 export const getCocktailByName = (name) =>
   request.get(`${SEARCH_BY_NAME_URL}${name}`);
 
-export const getCocktailById = (id) => 
+export const getCocktailById = (id) =>
   request.get(`${GET_COCKTAIL_BY_ID_URL}${id}`);
 
-export const getRandomCocktail = () => 
+export const getRandomCocktail = () =>
   request.get(GET_RANDOM_COCKTAIL_URL);

@@ -21,7 +21,7 @@ const CocktailOverview = ({
 }) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia 
+      <CardMedia
         component="img"
         height="300"
         image={imageSrc}

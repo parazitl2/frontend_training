@@ -15,11 +15,11 @@ const Login = () => {
     },
     validationSchema: Yup.object({
       email: Yup.string()
-        .email("Invalid email addresss`")
-        .required("Required"),
+        .email('Invalid email addresss`')
+        .required('Required'),
       password: Yup.string()
-        .min(6, "Must be 6 characters or more")
-        .required("Required")
+        .min(6, 'Must be 6 characters or more')
+        .required('Required')
     }),
     onSubmit: values => {
       // same shape as initial values
@@ -35,7 +35,7 @@ const Login = () => {
     >
 
       {/* <form onSubmit={formik.handleSubmit}> */}
-        <TextField 
+        <TextField
           id="email"
           name="email"
           label="Email"
@@ -44,7 +44,7 @@ const Login = () => {
           error={formik.touched.email && !!formik.errors.email}
           helperText={formik.touched.email && formik.errors.email}
         />
-        <TextField 
+        <TextField
           id="password"
           name="password"
           label="Password"

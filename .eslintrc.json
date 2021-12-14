@@ -5,7 +5,8 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "standard"
+        "standard",
+        "plugin:import/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,5 +21,21 @@
     "rules": {
         "semi": [2, "always"],
         "comma-dangle": "off"
+    },
+    "settings": {
+        // "import/resolver": {
+        //     "extensions": [
+        //         ".js", 
+        //         ".jsx"
+        //     ],
+        //     "paths": [
+        //         "./src"
+        //     ]
+        // },
+        "import/order": [2, {
+            "alphabetize": {
+                "order": "asc"
+            }
+        }]
     }
 }
