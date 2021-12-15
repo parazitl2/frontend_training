@@ -6,7 +6,13 @@ import React from 'react';
 import * as Yup from 'yup';
 
 const Login = ({ performLogin }) => {
-  const formik = useFormik({
+  const {
+    handleSubmit,
+    handleChange,
+    values,
+    touched,
+    errors,
+  } = useFormik({
     initialValues: {
       email: 'admin@noveogroup.com',
       password: 'password'
@@ -34,7 +40,7 @@ const Login = ({ performLogin }) => {
     >
       <Box
         component="form"
-        onSubmit={formik.handleSubmit}
+        onSubmit={handleSubmit}
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -48,10 +54,10 @@ const Login = ({ performLogin }) => {
           id="email"
           name="email"
           label="Email"
-          value={formik.values.email}
-          onChange={formik.handleChange}
-          error={formik.touched.email && !!formik.errors.email}
-          helperText={formik.touched.email && formik.errors.email}
+          value={values.email}
+          onChange={handleChange}
+          error={touched.email && !!errors.email}
+          helperText={touched.email && errors.email}
           sx={{ marginBottom: '20px' }}
         />
         <TextField
@@ -59,10 +65,10 @@ const Login = ({ performLogin }) => {
           name="password"
           label="Password"
           type="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          error={formik.touched.password && !!formik.errors.password}
-          helperText={formik.touched.password && formik.errors.password}
+          value={values.password}
+          onChange={handleChange}
+          error={touched.password && !!errors.password}
+          helperText={touched.password && errors.password}
           sx={{ marginBottom: '20px' }}
         />
         <Button
