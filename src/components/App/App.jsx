@@ -7,12 +7,12 @@ import { Navigate, Route, Routes } from 'react-router';
 
 import CatsPageContainer from '../../containers/CatsPage';
 import CocktailsListContainer from '../../containers/CocktailsList';
+import LoginContainer from '../../containers/Login';
 import WelcomeScreenContainer from '../../containers/WelcomeScreenContainer';
 import { selectIsInitialized } from '../../ducks/app/selectors';
 import { selectCurrentUser, selectIsAuth } from '../../ducks/user/selectors';
 import NavBarLayout from '../layouts/NavBarLayout';
 import RequireAuth from '../layouts/RequireAuth';
-import Login from '../Login';
 
 function App () {
   const isInitialized = useSelector(selectIsInitialized);
@@ -23,20 +23,25 @@ function App () {
     <div className="App">
       { isInitialized
         ? <Routes>
-              <Route element={<NavBarLayout isAuth={isAuth} currentUser={currentUser} />}>
-                <Route path='/' element={<WelcomeScreenContainer />}/>
-                <Route path='/login' element={isAuth
-                  ? <Navigate to='/' />
-                  : <Login />}/>
+            <Route element={<NavBarLayout isAuth={isAuth} currentUser={currentUser} />}>
+              <Route path='/' element={<WelcomeScreenContainer />}/>
+              <Route path='/login' element={isAuth
+                ? <Navigate to='/' />
+                : <LoginContainer />}
+              />
+
+              <Route element={<RequireAuth />}>
                 <Route path='/cocktails' element={<CocktailsListContainer />}/>
                 <Route path='/cats' element={<CatsPageContainer />}/>
-                <Route path='*' element={
-                  <RequireAuth>
-                    <Navigate to="/" />
-                  </RequireAuth>
-                }/>
               </Route>
-            </Routes>
+
+              <Route path='*' element={
+                <RequireAuth>
+                  <Navigate to="/" />
+                </RequireAuth>
+              }/>
+            </Route>
+          </Routes>
         : <Loader type='Puff' color='#11da4F' height={100} width={100} timeout={3000}/> }
       {/* <Counter /> */}
     </div>

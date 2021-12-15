@@ -33,5 +33,9 @@
         }],
         "import/newline-after-import": 2
     },
-    "settings": {}
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
 }

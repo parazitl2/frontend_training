@@ -1,14 +1,11 @@
-import { Button, TextField } from '@mui/material';
+import { Button, Paper, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import { useFormik } from 'formik';
+import PropTypes from 'prop-types';
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import * as Yup from 'yup';
 
-import { userLoginRequest } from '../../ducks/user/slice';
-
-const Login = () => {
-  const dispatch = useDispatch();
+const Login = ({ performLogin }) => {
   const formik = useFormik({
     initialValues: {
       email: 'admin@noveogroup.com',
@@ -22,20 +19,31 @@ const Login = () => {
         .min(6, 'Must be 6 characters or more')
         .required('Required')
     }),
-    onSubmit: values => {
-      // same shape as initial values
-      console.log(values);
-      dispatch(userLoginRequest(values));
-    }
+    onSubmit: performLogin
   });
 
   return (
-    <Box
-      component="form"
-      onSubmit={formik.handleSubmit}
+    <Paper
+      elevation={3}
+      sx={{
+        width: 400,
+        height: 350,
+        margin: '100px auto',
+        padding: '30px'
+      }}
     >
-
-      {/* <form onSubmit={formik.handleSubmit}> */}
+      <Box
+        component="form"
+        onSubmit={formik.handleSubmit}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        <Typography variant='h4' component='h1' sx={{ marginBottom: '40px' }}>
+          Log in, please
+        </Typography>
         <TextField
           id="email"
           name="email"
@@ -44,6 +52,7 @@ const Login = () => {
           onChange={formik.handleChange}
           error={formik.touched.email && !!formik.errors.email}
           helperText={formik.touched.email && formik.errors.email}
+          sx={{ marginBottom: '20px' }}
         />
         <TextField
           id="password"
@@ -54,13 +63,26 @@ const Login = () => {
           onChange={formik.handleChange}
           error={formik.touched.password && !!formik.errors.password}
           helperText={formik.touched.password && formik.errors.password}
+          sx={{ marginBottom: '20px' }}
         />
-        <Button color="primary" variant="contained" type="submit">
-          Login!
+        <Button
+          color="primary"
+          variant="contained"
+          type="submit"
+          sx={{
+            width: 150,
+            marginTop: '20px'
+          }}
+        >
+          Log in!
         </Button>
-      {/* </form> */}
       </Box>
+    </Paper>
   );
+};
+
+Login.propTypes = {
+  performLogin: PropTypes.func
 };
 
 export default Login;
