@@ -1,4 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material';
 
 const typography = {
   fontFamily: [
@@ -13,12 +13,6 @@ const typography = {
   ].join(','),
 };
 
-export const theme = createMuiTheme({
-  typography,
+export const theme = createTheme({
+  typography
 });
-
-// export const theme = createTheme({
-//   typography: {
-//     fontFamily: 'Montserrat, Roboto, Arial, sans-serif'
-//   }
-// });

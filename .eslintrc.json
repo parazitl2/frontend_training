@@ -4,15 +4,15 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
         "standard",
+        "plugin:react/recommended",
         "plugin:import/recommended"
     ],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": "latest",
+        "ecmaVersion": 12,
         "sourceType": "module"
     },
     "plugins": [
